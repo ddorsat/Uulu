@@ -11,7 +11,7 @@ struct FavoriteModel: Codable, Hashable {
     let productID: String
     let dateCreated: Date
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case productID = "product_id"
         case dateCreated = "date_created"
     }

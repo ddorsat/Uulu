@@ -23,7 +23,7 @@ struct OrderModel: Hashable, Codable {
         products.values.sorted(by: { $0.dateCreated < $1.dateCreated })
     }
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case uid
         case products
         case status
@@ -43,7 +43,7 @@ struct OrderProductsModel: Hashable, Codable {
     let dateCreated: Date
     let price: Int
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case productId = "product_id"
         case capacity
         case quantity
@@ -58,7 +58,7 @@ struct OrderedProduct: Identifiable, Hashable, Codable {
     let quantity: Int
     let dateCreated: Date
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case id
         case productId = "product_id"
         case quantity
