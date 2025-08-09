@@ -32,7 +32,7 @@ struct ProductModel: Identifiable, Hashable, Codable {
         return favorites.contains(currentUid)
     }
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case id
         case name
         case brand

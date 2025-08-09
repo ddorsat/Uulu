@@ -22,7 +22,7 @@ struct BasketModel: Hashable, Codable {
         return price * (quantity ?? 1)
     }
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case productId = "product_id"
         case dateCreated = "date_created"
         case price
