@@ -45,7 +45,8 @@ final class AuthViewModel: ObservableObject {
     }
     
     func listenToAuthState() {
-        AuthService.shared.authState.receive(on: DispatchQueue.main)
+        AuthService.shared.authState
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] authResult in
                 self?.authState = authResult
             }

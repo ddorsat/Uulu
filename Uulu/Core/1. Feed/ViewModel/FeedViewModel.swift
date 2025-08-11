@@ -54,37 +54,13 @@ final class FeedViewModel: ObservableObject {
     }
     
     private func listenToVMs() {
-        videoViewModel.objectWillChange
-            .sink { [weak self] _ in
-                self?.objectWillChange.send()
-            }
-            .store(in: &cancellabes)
-        
-        noveltyViewModel.objectWillChange
-            .sink { [weak self] _ in
-                self?.objectWillChange.send()
-            }
-            .store(in: &cancellabes)
-        
-        perfumesViewModel.objectWillChange
-            .sink { [weak self] _ in
-                self?.objectWillChange.send()
-            }
-            .store(in: &cancellabes)
-        
-        trendingViewModel.objectWillChange
-            .sink { [weak self] _ in
-                self?.objectWillChange.send()
-            }
-            .store(in: &cancellabes)
-        
-        basketViewModel.objectWillChange
-            .sink { [weak self] _ in
-                self?.objectWillChange.send()
-            }
-            .store(in: &cancellabes)
-        
-        authViewModel.objectWillChange
+        Publishers.Merge6(videoViewModel.objectWillChange,
+                          noveltyViewModel.objectWillChange,
+                          perfumesViewModel.objectWillChange,
+                          trendingViewModel.objectWillChange,
+                          basketViewModel.objectWillChange,
+                          authViewModel.objectWillChange)
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.objectWillChange.send()
             }
