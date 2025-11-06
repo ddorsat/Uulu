@@ -7,7 +7,7 @@
 | Принципы проектирования | SOLID, DRY, SSOT, YAGNI                              |
 | Аутентификация          | Firebase Auth                                        |
 | Облачная база данных    | Cloud Firestore                                      |
-| Асинхронность           | async/await, Combine, GCD                            |
+| Асинхронность           | Async/await, Combine, GCD                            |
 | Менеджер зависимостей   | Swift Package Manager (SPM)                          |
 
 <table>
